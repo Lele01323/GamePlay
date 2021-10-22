@@ -10,7 +10,7 @@ export const theme = {
     secondary50: '#243189', 
     secondary40: '#1D2766', 
     secondary30: '#495BCC', 
-   
+
     overlay: 'rgba(0,0,0,0.7)',
     highlight: '#ABB1CC',
     heading: '#DDE3F0',
