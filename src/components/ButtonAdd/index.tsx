@@ -1,7 +1,7 @@
 import React from 'react';
 import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { theme } from '../../global/styles/theme';
+import { theme } from '../../../global/styles/theme';
 
 import { styles } from './style';
 
