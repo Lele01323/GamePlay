@@ -47,7 +47,7 @@ export function Home({navigation}: {navigation: any}) {
             <View>
                 <View style={styles.header}>
                     <Profile />
-                    <ButtonAdd />
+                    <ButtonAdd onPress={() => navigation.navigate('AppointmentCreate')}/>
                 </View>
 
                 <CategorySelect 
