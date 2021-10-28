@@ -29,6 +29,18 @@ export function Home({navigation}: {navigation: any}) {
             category: '1',
             date: '22/06 às 20:40h',
             description: 'É hoje que vamos  chegar ao challenger sem perder uma partida da md10'
+        },
+        {
+            id: '2',
+            guild: {
+                id: '1',
+                name: 'Lendários',
+                icon: null,
+                owner: true
+            },
+            category: '1',
+            date: '22/06 às 20:40h',
+            description: 'É hoje que vamos  chegar ao challenger sem perder uma partida da md10'
         }
     ]
 
@@ -56,26 +68,25 @@ export function Home({navigation}: {navigation: any}) {
                     
                 />
 
-                <View style={styles.content}>
-                    <ListHeader 
-                        title= "Partidas agendadas"
-                        subtitle= "Total 6"
-                    />
+                <ListHeader 
+                    title= "Partidas agendadas"
+                    subtitle= "Total 6"
+                />
 
-                    <FlatList 
-                        data={appointments}
-                        keyExtractor={item => item.id}
-                        renderItem={({ item }) => (
-                        <Appointment 
-                            data={item} 
-                            onPress={() => navigation.navigate('AppointmentDetails')}
-                        />
-                        )}
-                        ItemSeparatorComponent={() => <ListDivider />}
-                        style={styles.matches}
-                        showsVerticalScrollIndicator={false}
-                    />    
-                </View>        
+                <FlatList 
+                    data={appointments}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => (
+                    <Appointment 
+                        data={item} 
+                        onPress={() => navigation.navigate('AppointmentDetails')}
+                    />
+                    )}
+                    ItemSeparatorComponent={() => <ListDivider />}
+                    contentContainerStyle={{ paddingBottom: 69 }}
+                    style={styles.matches}
+                    showsVerticalScrollIndicator={false}
+                />      
             </View>
         </Background>
     );

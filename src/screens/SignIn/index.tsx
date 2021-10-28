@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { View, 
         Text, 
         Image,
         } from 'react-native';
         
 import { useNavigation } from '@react-navigation/native';
+
+import { AuthContext } from '../../context/auth';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -16,6 +18,8 @@ import { Background } from '../../components/Background';
 
 export function SignIn({navigation}: {navigation: any}){
     //const navigation = useNavigation();
+
+    const context = useContext(AuthContext);
 
     function handleSignIn() {
         navigation.navigate('Home');
