@@ -1,16 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, 
         Text, 
         Image,
+        Alert,
+        ActivityIndicator
         } from 'react-native';
         
 import { useNavigation } from '@react-navigation/native';
 
-import { AuthContext } from '../../context/auth';
+import { useAuth } from '../../hooks/auth';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
 import IllustrationImg from '../../assets/illustration.png';
+import { theme } from '../../../global/styles/theme';
 import { styles } from './style';
 
 import { ButtonIcon } from '../../components/ButtonIcon'
@@ -19,10 +22,14 @@ import { Background } from '../../components/Background';
 export function SignIn({navigation}: {navigation: any}){
     //const navigation = useNavigation();
 
-    const context = useContext(AuthContext);
+    const { loading, signIn} = useAuth();
 
-    function handleSignIn() {
-        navigation.navigate('Home');
+    async function handleSignIn() {
+        try {
+            await signIn();
+        } catch (error) {
+            Alert.alert('error');
+        }
     }
     
     return(
@@ -47,12 +54,15 @@ export function SignIn({navigation}: {navigation: any}){
                         favoritos com seus amigos
                     </Text>
 
-                    <ButtonIcon 
-                        title="Entrar com Discord"
-                        onPress={() => navigation.navigate('Home')}
-                    />
+                    {
+                        loading ? <ActivityIndicator color={theme.colors.primary} />
+                        :
+                        <ButtonIcon 
+                            title="Entrar com Discord"
+                            onPress={handleSignIn}
+                        />
+                    }
                 </View>
-
             </View>
         </Background>    
     );
