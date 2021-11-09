@@ -19,7 +19,6 @@ export type AppointmentProps = {
     category: string;
     date: string;
     description: string;
-
 }
 
 type Props = RectButtonProps & {
@@ -44,32 +43,35 @@ export function Appointment({ data, ...rest }: Props) {
                 
                 <View style={styles.content}>
                     <View style={styles.header}>
+                        <Text style={styles.title}> 
+                            {data.guild.name}
+                        </Text>
 
-                        <View style={styles.footer}>
-                            <View style={styles.dateInfo}>
-                                <CalendarSvg />
+                        <Text style={styles.category}>
+                            { category.title }
+                        </Text>
+                    </View>
 
-                                <Text style={styles.date}>
-                                    { data.date }
-                                </Text>
-                            </View>
+                    <View style={styles.footer}>
+                        <View style={styles.dateInfo}>
+                            <CalendarSvg />
 
-                            <Text style={styles.category}>
-                                { category.title }
+                            <Text style={styles.date}>
+                                { data.date }
                             </Text>
-                        
-                            <View style={styles.playersInfo}>
-                                <PlayerSvg fill={ owner ? primary : on}/>
-
-                                <Text style={[
-                                    styles.player, 
-                                    { color: owner ? primary : on }
-                                ]}>
-                                    { owner ? 'Anfitrião' : 'Visitante' }
-                                </Text>
-                            </View>
                         </View>
-                    </View> 
+
+                        <View style={styles.playersInfo}>
+                            <PlayerSvg fill={ owner ? primary : on}/>
+
+                            <Text style={[
+                                styles.player, 
+                                { color: owner ? primary : on }
+                            ]}>
+                                { owner ? 'Anfitrião' : 'Visitante' }
+                            </Text>
+                        </View>
+                    </View>
                 </View>
             </View>
         </RectButton>

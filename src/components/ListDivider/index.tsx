@@ -1,12 +1,10 @@
 import React from 'react';
-
 import { View} from 'react-native';
 
 import { styles } from './style';
 
 type Props = {
     isCentered?: boolean;
-
 }
 
 export function ListDivider({ isCentered }: Props){

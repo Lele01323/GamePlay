@@ -11,7 +11,6 @@ export function Load(){
                 size="large"
                 color={theme.colors.primary}
             />
-
         </View>
     );
 }

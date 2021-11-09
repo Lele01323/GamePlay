@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { View, FlatList } from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { ButtonAdd } from '../../components/ButtonAdd';
 import { Profile } from '../../components/Profile';
@@ -11,9 +12,8 @@ import { ListHeader } from '../../components/ListHeader';
 import { Appointment, AppointmentProps } from '../../components/Appointment';
 import { ListDivider } from '../../components/ListDivider';
 
-import { COLLECTION_APPOINTMENTS } from '../../configs/database';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styles } from './style';
+import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 
 export function Home({navigation}: {navigation: any}) {
     const [category, setCategory] = useState('');
@@ -58,8 +58,7 @@ export function Home({navigation}: {navigation: any}) {
 
                 <CategorySelect 
                     categorySelected={category}
-                    setCategory={handleCategorySelect}
-                    
+                    setCategory={handleCategorySelect}   
                 />
 
                 {

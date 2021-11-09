@@ -49,11 +49,8 @@ export function Category({
                     <Text style={styles.title}>
                         { title }
                     </Text>
-                    
                 </LinearGradient>
             </LinearGradient>
-            
-
         </RectButton>    
     )
 }

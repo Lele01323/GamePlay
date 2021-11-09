@@ -44,9 +44,9 @@ export function SignIn({navigation}: {navigation: any}){
 
                 <View style={styles.content}>
                     <Text style={styles.title}>
-                        Organize {'\n'} 
-                        suas jogatinas {'\n'} 
-                        facilmente {'\n'} 
+                        Conecte-se {'\n'} 
+                        e organize suas {'\n'} 
+                        jogatinas {'\n'} 
                     </Text>
 
                     <Text style={styles.subtitle}>

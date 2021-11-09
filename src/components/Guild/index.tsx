@@ -4,6 +4,7 @@ import { View,
     TouchableOpacity, 
     TouchableOpacityProps 
 } from 'react-native';
+
 import { Feather } from '@expo/vector-icons';
 
 import { styles } from './style';
@@ -46,8 +47,8 @@ export function Guild({ data, ...rest }: Props ){
             <Feather 
                 name="chevron-right"
                 color={theme.colors.heading}
+                size={24}
             />
-
         </TouchableOpacity>
     );
 }

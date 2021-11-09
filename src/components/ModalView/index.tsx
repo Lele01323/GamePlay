@@ -19,6 +19,7 @@ export function ModalView({
     closeModal, 
     ...rest 
 }: Props){
+    
     return (
         <Modal
             transparent

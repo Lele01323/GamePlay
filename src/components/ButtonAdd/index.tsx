@@ -16,7 +16,6 @@ export function ButtonAdd({...rest} : RectButtonProps) {
                 color={theme.colors.heading}
                 size={24}
             />
-
         </RectButton>
     )
 }
